@@ -1,0 +1,9 @@
+<div
+  class="container col-md-10 col-sm-12 col-lg-9 rounded-0 d-flex justify-content-between"
+>
+  <div class="col-md-8 col-sm-12" style="max-width: 93vw" style="padding: 10px;">
+    <div *ngFor="let post of listPost">
+      <card-posts-home [post]="post"></card-posts-home>
+    </div>
+  </div>
+</div>

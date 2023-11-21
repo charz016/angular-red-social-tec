@@ -1,0 +1,74 @@
+<div class="container col-md-9 col-sm-11 rounded-0">
+  <div class="col-12 rounded p-4 mt-4 d-md-flex gap-5">
+    <div
+      class="col-md-4 col-sm-12 d-flex justify-content-center mx-auto align-items-start"
+    >
+      <div class="px-md-5"></div>
+      <img
+        src="assets/images/profile/default_profile.jpg"
+        class="img-thumbnail rounded-circle mb-3"
+        style="width: 170px; height: 170px"
+        alt="..."
+      />
+    </div>
+    <div class="col-md-8 col-sm-11">
+      <div class="d-flex flex-column">
+        <div class="d-flex gap-5 align-items-center">
+          <span style="font-size: xx-large">Juan escutia</span>
+        </div>
+        <span style="font-size: larger" class="text-secondary"
+          >@juan escutia</span
+        >
+
+        <div class="d-flex gap-2 align-items-center my-3">
+          <a class="btn btn-sm btn-primary"
+            ><i class="bi bi-file-post-fill"></i> 5 Publicaciones</a
+          >
+          <a class="btn btn-sm btn-primary"
+            ><i class="bi bi-people-fill"></i> Seguidores</a
+          >
+          <a class="btn btn-sm btn-primary"
+            ><i class="bi bi-person-fill"></i> Siguiendo</a
+          >
+        </div>
+
+        <div class="d-flex gap-2 align-items-center my-1">
+          <!-- <button class="btn btn-sm btn-danger unblockbtn">Unblock</button> -->
+
+          <!-- <div class="alert alert-danger" role="alert">
+            <i class="bi bi-x-octagon-fill"></i> @ blocked you !
+          </div> -->
+
+          <!-- <button class="btn btn-sm btn-danger unfollowbtn">Unfollow</button> -->
+
+          <!-- <button class="btn btn-sm btn-primary followbtn">Seguir</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3 class="border-bottom">Publicaciones</h3>
+
+  <!-- <div class="alert alert-secondary text-center" role="alert">
+    <i class="bi bi-x-octagon-fill"></i> You are not allowed to see posts !
+  </div> -->
+
+  <p
+    class="p-2 bg-white border rounded text-center my-3"
+    *ngIf="listPost.length == 0"
+  >
+    You don't have any post
+  </p>
+
+  <div class="gallery d-flex flex-wrap gap-2 mb-4" *ngIf="listPost.length > 0">
+    <div *ngFor="let post of listPost">
+      <img
+        [src]="post.img"
+        width="400px"
+        class="rounded"
+        height="300px"
+        (click)="viewCom(post)"
+        style="cursor: pointer"
+      />
+    </div>
+  </div>
+</div>
