@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fir-red-social"
+  },
+  "targets": {
+    "fir-red-social": {
+      "hosting": {
+        "angular-red-social-tec": [
+          "fir-red-social"
+        ]
+      }
+    }
+  }
+}

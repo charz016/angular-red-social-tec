@@ -10,6 +10,7 @@ export class ModalCreatePostComponent {
   selectedFiles?: FileList;
   currentFile?: File;
   preview = '';
+  description: any;
 
   @Input() public user!: any;
   @Output() passEntry: EventEmitter<any> = new EventEmitter();
@@ -43,6 +44,14 @@ export class ModalCreatePostComponent {
   }
 
   publish() {
-    this.activeModal.close(this.currentFile);
+    if (!this.currentFile) return;
+
+    const request = {
+      img: this.preview,
+      description: this.description,
+      likes: [],
+      comments: [],
+    };
+    this.activeModal.close(request);
   }
 }

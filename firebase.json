@@ -1,0 +1,13 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": [
+    {
+      "target": "angular-red-social-tec",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

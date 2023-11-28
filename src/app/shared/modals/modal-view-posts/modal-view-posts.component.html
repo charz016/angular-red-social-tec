@@ -53,7 +53,7 @@
         >
           <div
             class="d-flex align-items-center p-2"
-            *ngFor="let post of post.comentarios"
+            *ngFor="let post of post.comments"
           >
             <div>
               <img
@@ -70,10 +70,12 @@
             >
               <h6 style="margin: 0px">
                 <a class="text-decoration-none text-dark text-small text-muted">
-                  @1asdasd - {{ post }} </a
-                >
+                  @{{ post.user }} - {{ post.comment }}
+                </a>
               </h6>
-              <p style="margin: 0px" class="text-muted">(publicado hace 1 hora)</p>
+              <p style="margin: 0px" class="text-muted">
+                (publicado hace 1 hora)
+              </p>
             </div>
           </div>
         </div>

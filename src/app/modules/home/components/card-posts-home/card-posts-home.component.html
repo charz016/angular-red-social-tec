@@ -21,7 +21,7 @@
 
         <ul class="dropdown-menu">
           <li style="cursor: pointer">
-            <a class="dropdown-item"
+            <a class="dropdown-item" (click)="deletePub()"
               ><i class="bi bi-trash-fill"></i> Eliminar publicacion
             </a>
           </li>
@@ -35,15 +35,15 @@
   <h4 style="font-size: x-larger" class="p-2 border-bottom d-flex">
     <i
       class="bi bi-heart-fill unlike_btn text-danger"
-      *ngIf="post.likes == 0"
+      *ngIf="post.likes.length == 0"
     ></i>
-    <i class="bi bi-heart like_btn" *ngIf="post.likes > 0"></i>
+    <i class="bi bi-heart like_btn" *ngIf="post.likes.length > 0"></i>
 
     &nbsp;&nbsp;<i
       class="bi bi-chat-left d-flex align-items-center"
       (click)="viewCom()"
       ><span class="p-1 mx-2 text-small" style="font-size: small">
-        {{ post.comentarios.length }} comentarios</span
+        {{ post.comments.length }} comentarios</span
       ></i
     >
   </h4>
@@ -53,11 +53,11 @@
       ><span>{{ post.likes }} </span> likes</span
     >
     <span style="font-size: small" class="text-muted">Publicado hace</span>
-    {{ post.time ? post.time : "ahora" }}
+    ahora
   </div>
 
   <div class="card-body">
-    {{ post.text }}
+    {{ post.description }}
   </div>
 
   <div class="input-group p-2">
